@@ -8,33 +8,72 @@
 </head>
 <body>
 <main>
-  <header><h1>Syntax<span>l</span></h1><p class="sub">Wordle for programmers. Guess the keyword or function.</p></header>
+  <header>
+    <h1 class="logo" id="logo">Syntax<span>l</span></h1>
+    <div id="profile" class="profile"></div>
+  </header>
 
-  <section id="setup">
-    <h2>Which languages do you know?</h2>
-    <p class="muted">Tick a language and choose your level. Puzzles are drawn from your languages at your level.</p>
+  <section id="menu">
+    <p class="sub">The word game for coders. Guess it in 6 tries!</p>
+    <button class="card" id="soloBtn"><b>🎮 Solo Adventure</b><small>Endless words, hints, XP and streaks</small></button>
+    <button class="card" id="rankedBtn"><b>⚔️ Ranked 1v1</b><small>Race a real player. Win to climb Bronze → Diamond</small></button>
+    <button class="card" id="friendBtn"><b>🤝 Friend Battle</b><small>Share a room code, no rating on the line</small></button>
+    <button class="card" id="langBtn"><b>🧑‍💻 My Languages</b><small>Pick what you know and your level</small></button>
+  </section>
+
+  <section id="setup" hidden>
+    <h2>What do you know?</h2>
+    <p class="muted">Tick topics and set your level. <b>Tech Basics</b> needs no coding knowledge.</p>
     <div id="langs"></div>
-    <p id="setupError" class="error" hidden>Pick at least one language.</p>
-    <button id="startBtn" class="primary">Start playing</button>
+    <p id="setupError" class="error" hidden>Pick at least one topic.</p>
+    <button id="saveLangs" class="primary">Save</button>
+  </section>
+
+  <section id="friend" hidden>
+    <h2>Friend Battle</h2>
+    <button id="createRoom" class="primary">Create a room</button>
+    <p class="muted center">or join a friend's room</p>
+    <div class="join"><input id="roomCode" maxlength="4" placeholder="CODE" autocomplete="off"><button id="joinRoom">Join</button></div>
+    <p id="friendMsg" class="error"></p>
+    <button class="ghost back">Back</button>
+  </section>
+
+  <section id="lobby" hidden>
+    <h2 id="lobbyTitle">Searching…</h2>
+    <div class="spinner"></div>
+    <p id="lobbyMsg" class="center muted"></p>
+    <button id="cancelLobby" class="ghost">Cancel</button>
   </section>
 
   <section id="game" hidden>
+    <div id="vsBar" class="vsbar" hidden></div>
     <div class="bar">
       <div id="tag" class="tag"></div>
-      <div class="actions">
-        <button id="hintBtn">Hint</button>
-        <button id="settingsBtn">Languages</button>
-      </div>
+      <div class="actions"><button id="hintBtn">💡 Hint</button><button id="quitBtn">Menu</button></div>
     </div>
-    <p id="hint" class="hint" hidden></p>
-    <div id="board" aria-live="polite"></div>
+    <div id="clue" class="clue"></div>
+    <div id="hints" class="hints"></div>
+    <div id="pattern" class="pattern"></div>
+    <div id="board"></div>
+    <div id="oppWrap" hidden><div class="muted center">Opponent</div><div id="oppBoard"></div></div>
     <p id="msg" class="msg"></p>
     <div id="keyboard"></div>
-    <button id="nextBtn" class="primary" hidden>Next word</button>
-    <p id="stats" class="muted"></p>
+    <button id="nextBtn" class="primary" hidden>Next word ➜</button>
+  </section>
+
+  <section id="result" hidden>
+    <h2 id="resTitle"></h2>
+    <div id="resBody" class="resbody"></div>
+    <button id="againBtn" class="primary">Play again</button>
+    <button id="menuBtn" class="ghost">Menu</button>
   </section>
 </main>
+<div id="banner" class="banner" hidden></div>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <script src="words.js"></script>
-<script src="game.js"></script>
+<script src="core.js"></script>
+<script src="solo.js"></script>
+<script src="versus.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

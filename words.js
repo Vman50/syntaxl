@@ -52,3 +52,30 @@ const BANK = {
     [["proc","Object wrapping a block"],["lambda","Strict-arity proc"],["mixin","Behavior shared via include"],["gemfile","Lists a project's dependencies"],["refinement","Scoped monkey patch"]]
   ]
 };
+
+// Tech Basics needs no language knowledge: general dev/computer words with emoji clues.
+// Entry: [word, riddle-style hint, emoji]
+const TECH = [
+  [
+    ["code","What programmers write all day","👨‍💻"],["byte","Eight bits","💾"],["loop","Goes round and round until told to stop","🔁"],
+    ["mouse","Click me! I am not a rodent (here)","🖱️"],["email","Digital letter with an @","📧"],["cloud","Someone else's computer, up in the sky","☁️"],
+    ["robot","Automated machine that follows instructions","🤖"],["pixel","Tiniest dot on your screen","🟦"],["virus","Malware that spreads, or a bug that makes you sick","🦠"],
+    ["login","Enter your username and password","🔑"],["emoji","Tiny picture used in chat","😀"],["cache","Fast storage for things you use often","⚡"],
+    ["array","A numbered list of items","📋"],["stack","Last in, first out pile","🥞"],["queue","First in, first out line","🚶"],["debug","Hunt down and squash the bugs","🐛"]
+  ],
+  [
+    ["server","Computer that serves web pages","🖥️"],["router","Sends your packets on their way at home","📡"],["binary","Language of ones and zeros","🔢"],
+    ["domain","The 'google.com' part of a web address","🌐"],["cookie","Small file a site stores in your browser","🍪"],["branch","Parallel version of your code in git","🌿"],
+    ["commit","A saved snapshot in git","📸"],["github","Where developers host repos","🐙"],["backup","Spare copy in case disaster strikes","🗄️"],
+    ["deploy","Ship your app to the world","🚀"],["widget","Small UI component","🧩"],["kernel","The core of an operating system","🌰"],
+    ["syntax","The grammar rules of a language","📖"],["compile","Turn source code into a program","⚙️"],["script","A short program, often automated","📜"],["python","A very popular snake-named language","🐍"]
+  ],
+  [
+    ["recursion","See: recursion","🪞"],["algorithm","Step-by-step recipe to solve a problem","🧮"],["cipher","Scrambles data so only the key holder can read it","🔐"],
+    ["firewall","Blocks unwanted network traffic","🧱"],["database","Organized store of data","🗃️"],["framework","Ready-made structure to build an app on","🏗️"],
+    ["protocol","Agreed rules for computers to talk, like HTTP","🤝"],["refactor","Clean up code without changing what it does","🧹"],["latency","The delay before data arrives","⏱️"],
+    ["hashmap","Key-value lookup structure","🗺️"],["payload","The actual data carried by a request","📦"],["sandbox","Isolated safe space to run code","🏖️"],
+    ["mutex","Lock to stop threads colliding","🚦"],["pipeline","Automated build, test and deploy chain","🚰"],["variable","A named box holding a value","📥"],["function","Reusable block of code you can call","🎯"]
+  ]
+];
+const POOLS = Object.assign({ "Tech Basics": TECH }, BANK);
