@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Syntaxl – Coding Wordle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><h1>Syntax<span>l</span></h1><p class="sub">Wordle for programmers. Guess the keyword or function.</p></header>
+
+  <section id="setup">
+    <h2>Which languages do you know?</h2>
+    <p class="muted">Tick a language and choose your level. Puzzles are drawn from your languages at your level.</p>
+    <div id="langs"></div>
+    <p id="setupError" class="error" hidden>Pick at least one language.</p>
+    <button id="startBtn" class="primary">Start playing</button>
+  </section>
+
+  <section id="game" hidden>
+    <div class="bar">
+      <div id="tag" class="tag"></div>
+      <div class="actions">
+        <button id="hintBtn">Hint</button>
+        <button id="settingsBtn">Languages</button>
+      </div>
+    </div>
+    <p id="hint" class="hint" hidden></p>
+    <div id="board" aria-live="polite"></div>
+    <p id="msg" class="msg"></p>
+    <div id="keyboard"></div>
+    <button id="nextBtn" class="primary" hidden>Next word</button>
+    <p id="stats" class="muted"></p>
+  </section>
+</main>
+<script src="words.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
